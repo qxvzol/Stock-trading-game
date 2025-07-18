@@ -50,12 +50,12 @@ event_list = [
         "name":"Standard Oil Dissolved",
         "years":(random.randint(1908,1912)),
         "desc":"The monopoly standard oil has been split by the supreme court",
-        "oil":(-30,-100),
+        "oil":(-40,-200),
         "mil":(-5,0),
         "civ":(-5,-5),
         "agr":(5,10),
         "tec":(-5,0),
-        "ind":(-10,-20),
+        "ind":(-20,-20),
         "trn":(-10,-15),
         "gol":(5,0)
         },
@@ -69,8 +69,8 @@ event_list = [
         "civ":(-5,0),
         "agr":(0,0),
         "tec":(-5,0),
-        "ind":(-10,-5),
-        "trn":(-20,-30),
+        "ind":(-20,-15),
+        "trn":(-20,-60),
         "gol":(0,0)
         },
 
@@ -83,17 +83,17 @@ event_list = [
         "civ":(-5,-5),
         "agr":(5,0),
         "tec":(-5,0),
-        "ind":(-20,-30),
+        "ind":(-40,-60),
         "trn":(-10,-5),
         "gol":(-5,0)
         },
 
     {
         "name":"War in Europe",
-        "years":(random.randint(1912)),
+        "years":(1912),
         "desc":"Germany at war with France and Britain",
         "oil":(15,5),
-        "mil":(20,30),
+        "mil":(30,40),
         "civ":(-15,-20),
         "agr":(-5,0),
         "tec":(10,5),
@@ -118,10 +118,10 @@ event_list = [
 
     {
         "name":"Russian civil war",
-        "years":(1913),
-        "desc":"The Bolshviks have gained power in Russia",
+        "years":(random.randint(1915,1918)),
+        "desc":"The Bolsheviks have gained power in Russia",
         "oil":(-5,0),
-        "mil":(15,20),
+        "mil":(20,40),
         "civ":(-5,0),
         "agr":(5,0),
         "tec":(5,0),
@@ -132,16 +132,30 @@ event_list = [
 
     {
         "name":"US joins the war",
-        "years":(1913),
-        "desc":"The US is now siding with the allies",
+        "years":(1917),
+        "desc":"The US is now siding with the entente",
+        "oil":(10,5),
+        "mil":(35,60),
+        "civ":(-5,-5),
+        "agr":(0,0),
+        "tec":(10,15),
+        "ind":(15,25),
+        "trn":(15,5),
+        "gol":(5,0)
+        },
+
+    {
+        "name":"Armistice signed",
+        "years":(random.randint(1917,1919)),
+        "desc":"This marks the end of the Great War",
         "oil":(-10,-10),
-        "mil":(-35,-40),
-        "civ":(10,25),
-        "agr":(10,0),
+        "mil":(-15,-40),
+        "civ":(10,15),
+        "agr":(5,0),
         "tec":(-5,0),
-        "ind":(-10,0),
-        "trn":(-5,0),
-        "gol":(-2,0)
+        "ind":(-5,-10),
+        "trn":(-5,-10),
+        "gol":(-3,0)
         },
     ]
 

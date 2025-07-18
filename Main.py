@@ -25,8 +25,17 @@ def event_occur(event,values):
 def random_change(values):
     for i in types:
         edit=(values[i])
-        edit[0]+=random.randint(-5,5)
-        edit[1]+=random.randint(-10,10)
+        edit[0]+=random.randint(-5,7)
+        edit[0]*=0.8
+        lower_bound=edit[1]-50
+        lower_bound/=50
+        lower_bound=clamp(lower_bound,0,1)
+        upper_bound=500-edit[1]
+        upper_bound/100
+        upper_bound=clamp(upper_bound,0,1)
+        edit[1]+=(edit[0]*lower_bound*upper_bound)
+        edit[1]+=random.randint(-10,5)
+        edit[1]=round(edit[1])
         values[i]=edit
 
 def clamp(value,minvalue,maxvalue):
@@ -82,8 +91,8 @@ values={
 
 
 for x in event_list:
-    range=x["years"]
-    event_years.append(range)
+    year_occur=x["years"]
+    event_years.append(year_occur)
     event_order.append(x)
 #RUNNING LOOP ---------------------------------------------------------------------------------
 
@@ -106,10 +115,15 @@ while True:
     print(money)
     year+=1
     try:
-        event_number=event_years.index(year)
-        event=event_order[event_number]
-        event_occur(event,values)
+        while True:
+            event_number=event_years.index(year)
+            event=event_order[event_number]
+            event_occur(event,values)
+            event_order.remove(event)
+            event_years.pop(event_number)
     except:
         pass
-    print(get_values(values))
+    values_list=get_values(values)
+    for a in range(0,8):
+        print(types[a],": ",values_list[a])
     print(year)
